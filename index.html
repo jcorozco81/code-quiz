@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/style.css"/>
+    <title>Code Quiz</title>
+</head>
+<header>
+    <nav><button id="score-list-btn" title="View Score List"
+    onclick="showscorelist();return false;">View Scores</button></nav>
+
+</header>
+<body>
+    <div id="timer-div"><h2 id="timer">Time: 60 seconds</h2></div>
+
+    <main>
+
+
+
+        <!-- Initial Page (Page 0) -->
+    <section id="initial-page" class="page-0">
+    <h1 id="main-title">Coding Quiz Challenge</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, commodi!</p>
+
+        <button id="start-button">Start Game</button>
+
+    </section>
+
+
+
+        <!-- Questions Page (Page 1) -->
+    <section id="questions-page" class="page-1">
+    <div id="qanda-container">
+        <h1 id="questions-header"></h1>
+    </div>
+    </section>
+
+
+
+
+
+        <!-- Name Entry Page (Page 2) -->
+    <section id="data-entry-page" class="page-2">
+        <h1 id="game-over">All done!</h1>
+        <p id="final-score"></p>
+        <form id="name-entry">
+            <div id="textfield-container">
+            <input type="text" id="player-name" name="playername" placeholder="Enter name"></input>
+            </div>
+            <button id="submit-score" class="form-btn">Submit</button>
+        </form>
+    </section>
+
+
+        <!-- Score Page (Page 2) -->
+
+    <section id="scores-page" class="page-3">
+        <h1>Scores List:</h1>
+        <ul id="score-list">
+
+        </ul>
+        <form id="score-list-form">
+            <button id="go-back" class="form-btn">Restart Game</button>
+            <button id="clear-scores" class="form-btn">Clear Scores</button>
+        </form>
+    </section>
+    <div id="results-div"><h3 id="result"></h3></div>
+    </main>
+    <footer>
+        <div id="footer-container">
+            <h4>© 2021 Created by Juan Orozco</h4>
+            <a href="https://jcorozco81.github.io/portfolio/">Contact Me</a>
+        </div>       
+    </footer>
+
+    <script src="./assets/js/script.js"></script>
+</body>
+</html>
