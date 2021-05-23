@@ -1,0 +1,151 @@
+* {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 2;
+    box-sizing: border-box;
+}
+
+/* Variables */
+
+:root {
+
+    --bckgnd-color: white;
+    --contrast-color: teal;
+
+  }
+
+
+  body {
+    background-color: var(--bckgnd-color);
+}
+
+
+.page-0{
+    display: block;
+    text-align: center;
+}
+.page-1, .page-2, .page-3, #timer{
+    display: none;
+    text-align: center;
+}
+
+#scores-page{
+
+    justify-content: center;
+}
+
+ul{
+    list-style-type: none;
+    text-align: left;
+    display: inline-block;
+
+}
+
+
+
+button{
+    background-color: teal;
+    border: none;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+    font-size: 16px;
+    margin: 20px;
+    border-radius: 10px;
+
+}
+
+.option-btn, #start-button{
+
+    width: 250px;
+    height: 120px;
+}
+
+.form-btn {
+    width: 180px;
+    height: 80px;
+    font-size: 14px;
+}
+
+#score-list-btn{
+    width: 200px;
+    height: 50px;
+    font-size: 14px;
+
+}
+
+
+
+input {
+margin: auto;
+
+}
+
+#name-entry{
+
+    justify-content: center;
+}
+
+
+header{
+    display: block;
+    height: 100px;
+    border-bottom: solid var(--contrast-color) 5px;
+}
+nav{
+    text-align: right;
+
+
+}
+
+#results-div, #timer-div{
+    height: 40px;
+}
+
+#results-div h3{
+    padding: 5px;
+    text-align: center;
+    font-weight: bold;
+}
+
+
+
+main{
+    display: block;
+    height: 500px;
+    padding: 100px;
+    margin: 75px;
+}
+section{
+    height: 400px;
+
+}
+
+footer{
+    display: block;
+    height: 20px;
+    text-align: center;
+    border-top: solid var(--contrast-color) 5px;
+
+}
+
+footer h4{
+ 
+    color: var(--contrast-color);
+}
+
+footer a{
+    font-weight: bold;
+    text-decoration: none;
+    color: var(--contrast-color);
+}
+
+#footer-container{
+
+    margin: 10px;
+
+}
