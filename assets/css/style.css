@@ -116,13 +116,16 @@ nav{
 
 main{
     display: block;
-    height: 500px;
-    padding: 100px;
     margin: 75px;
 }
-section{
-    height: 400px;
 
+
+
+#initial-text{
+    border: solid var(--contrast-color) 5px;
+    border-radius: 10px;
+    width: 50%;
+    margin-left: 25%;
 }
 
 footer{
