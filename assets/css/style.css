@@ -184,6 +184,38 @@ footer a{
     /* header{
         background-color: #bb8588;
     } */
+    main{
+
+        margin: 10px;
+    }
+
+    #initial-text, #score-list-container{
+        border: solid teal 5px;
+        padding: 10px;
+        font-size: medium;
+        display: block;
+        text-align: center;
+        width: auto;
+        margin: auto;
+    }
+
+    nav{
+        text-align: center;
+       
+    }
+
+    .option-btn, #start-button, .form-btn, #score-list-btn {
+
+        width: 150px;
+        height: 80px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: small;
+        display: block;
+    }
+
 
 }
   
@@ -194,7 +226,37 @@ footer a{
         background-color: #89bb85;
     } */
     
+    #initial-text, #score-list-container{
+        border: solid teal 5px;
+        padding: 10px;
+        font-size: medium;
+        display: block;
+        text-align: center;
+        width: auto;
+        margin: auto;
+    }
 
+    nav{
+        text-align: center;
+       
+    }
+
+    .option-btn, #start-button, .form-btn, #score-list-btn {
+
+        width: 150px;
+        height: 80px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: small;
+        display: block;
+    }
+
+    main{
+
+        margin: 10px;
+    }
 }
   
   /* Small smartphones */
@@ -228,8 +290,6 @@ footer a{
         margin-right: auto;
         font-size: small;
         display: block;
-
-
     }
     
     main{
@@ -239,8 +299,7 @@ footer a{
     
     nav{
         text-align: center;
-    
-    
+       
     }
 
 }
