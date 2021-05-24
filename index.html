@@ -7,40 +7,33 @@
     <link rel="stylesheet" href="./assets/css/style.css"/>
     <title>Code Quiz</title>
 </head>
-<header>
-    <nav><button id="score-list-btn" title="View Score List"
-    onclick="showscorelist();return false;">View Scores</button></nav>
-
-</header>
 <body>
+    
+    <!-- Header -->
+    <header>
+        <nav><button id="score-list-btn" title="View Score List">View Scores</button></nav>
+    </header>
+
+    <!-- Show Timer -->
     <div id="timer-div"><h2 id="timer">Time: 60 seconds</h2></div>
 
     <main>
 
-
-
         <!-- Initial Page (Page 0) -->
     <section id="initial-page" class="page-0">
         <div id="initial-text">
-    <h1 id="main-title">Coding Quiz Challenge</h1>
-    <p>Read and answer the following questions carefully. All of the questions are in multiple choice format, choose the best answer. If you get an incorrect answer you’ll miss 10 seconds from your total available time. As soon as you complete the whole quiz, you will see your score. Good luck!</p>
-    </div>
+            <h1 id="main-title">Coding Quiz Challenge</h1>
+            <p>Read and answer the following questions carefully. All of the questions are in multiple choice format, choose the best answer. If you get an incorrect answer you’ll miss 10 seconds from your total available time. As soon as you complete the whole quiz, you will see your score. Good luck!</p>
+        </div>
         <button id="start-button">Start Quiz</button>
-
     </section>
-
-
 
         <!-- Questions Page (Page 1) -->
     <section id="questions-page" class="page-1">
-    <div id="qanda-container">
-        <h1 id="questions-header"></h1>
-    </div>
+        <div id="qanda-container">
+            <h1 id="questions-header"></h1>
+        </div>
     </section>
-
-
-
-
 
         <!-- Name Entry Page (Page 2) -->
     <section id="data-entry-page" class="page-2">
@@ -48,29 +41,32 @@
         <p id="final-score"></p>
         <form id="name-entry">
             <div id="textfield-container">
-            <input type="text" id="player-name" name="playername" placeholder="Enter name"></input>
+                <input type="text" id="player-name" name="playername" placeholder="Enter name"></input>
             </div>
             <button id="submit-score" class="form-btn">Submit</button>
         </form>
     </section>
 
-
-        <!-- Score Page (Page 2) -->
+        <!-- Score Page (Page 3) -->
 
     <section id="scores-page" class="page-3">
         <div id=score-list-container>
-        <h1>Scores List:</h1>
-        <ul id="score-list">
+            <h1>Scores List:</h1>
+            <ul id="score-list">
 
-        </ul>
-    </div>
+            </ul>
+        </div>
         <form id="score-list-form">
             <button id="go-back" class="form-btn">Restart Quiz</button>
             <button id="clear-scores" class="form-btn">Clear Scores</button>
         </form>
     </section>
+
+    <!-- Display Correct/Incorrect -->
     <div id="results-div"><h3 id="result"></h3></div>
+    
     </main>
+    <!-- Footer -->
     <footer>
         <div id="footer-container">
             <h4>© 2021 Created by Juan Orozco</h4>
