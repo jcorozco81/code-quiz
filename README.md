@@ -5,16 +5,9 @@ Code Quiz Webpage
 
 ## Description
 
-The Password Generator Script was created with the purpose of providing the user a way to create a password that meets specific criteria. The user will be prompted to choose the password length (8 - 128 characters) and the character types to be included in the password. The character types available for the user to choose from are:
+The Code Quiz Webpage was created with the purpose of providing the user a way to test his/her knowledge on JavaScript coding. The user will have 60 seconds to answer four  questions. After all four questions are answered, the user will be able to see his/her score and saved it to the brwoser local storage.
 
-* Uppercase Letters
-* Lowercase Letters
-* Numeric characters
-* Special Characters 
-
-The Special Characters included in the application can be found in the following link from the OWASP Foundation.https://www.owasp.org/index.php/Password_special_characters).
-
-By writing the code for this script, I learned how to write JavaScript code and how to approach and address each of the functional requirements. As a note, I was self-learning Java and JavaScript some time ago and I was working on a shuffle deck code. I used the code I prepared for that mini project for this script.
+By working on this project, I learned how to use the JavaScript code to modify the html document, change styling and saving data to the local storage. 
 
 
 
@@ -43,30 +36,52 @@ Or
 
 ## Usage
 
-1. The page that will load on the web browser shall be as per the following screenshot:
+1. The webpage will load on the web browser, and it shall be similar to the one shown in the following picture.
 
-[Screenshot of the Code Quiz Main Page](/assets/images/password-gen-screenshot.PNG)
+[Screenshot of the Code Quiz Main Page](/assets/images/main-page.PNG)
 
-![Screenshot of the Code Quiz Main Page](/assets/images/password-gen-screenshot.PNG)
+![Screenshot of the Code Quiz Main Page](/assets/images/main-page.PNG)
 
-2. To generate a new password, click on the button named "Generate Password" (See picture for reference). A prompt will appear asking for the Password length. After the password length is entered, the webpage will ask the user to confirm the value entered.
+2. To start the quiz, click on the button **Start Quiz**. After the **Star Quiz** button is clicked, a question will be shown and the timer on top of the screen will start. Only one question will be shown at a time. After a question is answered, then the next one will be shown and then successively until all four are shown. If the question is answered correctly, a text that reads **Correct!** will be shown. If the question is answered incorrectly a text that reads **Incorrect, -10 points!** will be shown and 10 seconds will be automatically subtracted from the time.
 
-3. After the password length is confirmed, four prompts will ask the user to confirm which character types will be included in the password (lowercase, uppercase, numbers, and special characters). After all character type prompts are confirmed or declined, the user will be asked to confirm all selections made.
+[Screenshot showing a Questions](/assets/images/questions.PNG)
 
-4. A password will appear on the webpage text box. The password shall be created per the criteria selected by the user. 
+![Screenshot showing a Questions](/assets/images/questions.PNG)
+
+3. After all four questions are answered, the **Final Score** will be shown. The **Final Score** will be the time remaining minus ten seconds for each question answered incorrectly. An **input text field** with a **Submit** button will be shown along with the **Final Score** for the user to save his/her score. The **Final Score** will be shown after any of the two conditions are met:
+
+    * Sixty seconds have elapsed, and the timer is zero. 
+        or
+    * All four questions are answered.
+
+[Screenshot showing the Final Score](/assets/images/final-score.PNG)
+
+![Screenshot showing the Final Score](/assets/images/final-score.PNG)
+
+
+4. After the score is saved, the user will be able to see the scores previously saved. Two buttons will be shown: **Restart Quiz** and **Clear Scores**.
+
+    * **Restart Quiz:** The main page will be shown.
+    * **Clear Scores:** all the scores will be cleared and the browser local storage will be cleared as well.
+
+[Screenshot showing the Score List](/assets/images/score-list.PNG)
+
+![Screenshot showing the Score List](/assets/images/score-list.PNG)
+
+
+5. The **View Scores** button is always shown on the right side of header for the user to navigate to the **Score List**
 
 
 
 ## Credits
 
-The files index.html and style.css, and a portion of the JavaScript code were created by © 2021 Trilogy Education Services, LLC, a 2U, Inc. brand. Confidential and Proprietary. All Rights Reserved.
-
-The JavaScript code contained in the generatePassword function was created by Juan Carlos Orozco.
+The index.html file, the style.CSS file and the JavaScript code file (script.js) in this project were created by Juan Carlos Orozco.
 
 Contact Information:
 * Juan Orozco
 * Email: (jcorozco@gmail.com)
 
+I want to thank the ballerz study group for all the ideas shared in our meetings.
 
 ## License
 
