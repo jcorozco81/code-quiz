@@ -1,61 +1,63 @@
+// Qs and As array
 var QsandAs = [
     {question: "What is Javascript?", options: ["A web browser", "A Programming Language", "A website", "A computer program"], answer: "op 2"},
     {question: "What character is used for multiplication?", options: ["x", "*", "m", "&"], answer: "op 2"},
     {question: "Declare a variable x equal to 5:", options: ["var x:5;", "int x=5,", "var x = 5;", "x=5;"], answer: "op 3"},
     {question: "Logical Comparator AND is represented by the following symbols:", options: ["$$", "++", "||", "&&"], answer: "op 4"}];
 
-// Hide and show pages
+// Query Selector to hide and show pages
     var page0 = document.querySelector(".page-0");
     var page1 = document.querySelector(".page-1");
     var page2 = document.querySelector(".page-2");
     var page3 = document.querySelector(".page-3");
 
-var startgame = document.querySelector("#start-button");
+// Query Selector to manage main page buttons
+    var startgame = document.querySelector("#start-button");
+    var scorelistbtn = document.querySelector("#score-list-btn");
 
-// Result after answering each question
-var result = document.querySelector("#result");
+// Query Selector to display the result after answering each question
+    var result = document.querySelector("#result");
 
-var renderquestion = document.querySelector("#questions-header");
-var qanda = document.querySelector("#qanda-container");
+// Query Selector for the questions and answers rendering
+    var renderquestion = document.querySelector("#questions-header");
+    var qanda = document.querySelector("#qanda-container");
 
 // Show Time Left
-var timer = document.querySelector("#timer");
+    var timer = document.querySelector("#timer");
 
-var submitbutton = document.querySelector("#submit-score");
-var displayscore = document.querySelector("#final-score");
-var playername = document.querySelector("#player-name");
+// Query Selector for the final score and name submission
+    var submitbutton = document.querySelector("#submit-score");
+    var displayscore = document.querySelector("#final-score");
+    var playername = document.querySelector("#player-name");
 
-var scorelist = document.querySelector("#score-list");
-var clearscores = document.querySelector("#clear-scores");
-var goback = document.querySelector("#go-back");
+// Query Selector for the display scores page
+    var scorelist = document.querySelector("#score-list");
+    var clearscores = document.querySelector("#clear-scores");
+    var goback = document.querySelector("#go-back");
 
+// Variables
+    var timeleft= 60;
+    var questionindex = 0;
+    var tosave=[];
 
-var timeleft= 60;
-var questionindex = 0;
-var tosave=[];
-
-var savedscores = JSON.parse(localStorage.getItem("saved-scores"));
-if (savedscores !== null) {
-    tosave = savedscores;
-  }
-
-
-
-
-// Start Button will initialize the game
-startgame.addEventListener("click", init);
+// Get scores already saved
+    var savedscores = JSON.parse(localStorage.getItem("saved-scores"));
+    if (savedscores !== null)
+    {
+        tosave = savedscores;
+    }
 
 
 
+// Start Button will initialize the Quiz
+    startgame.addEventListener("click", init);
+    scorelistbtn.addEventListener("click",showscorelist);
 
 
 
-
-
-
-
-// Game Engine
-function init (event){
+// Quiz Engine
+function init (event)
+{
     renderscorelist();
     page0.style.display="none";
     page1.style.display="block";
@@ -78,9 +80,8 @@ function init (event){
 
 
 
-    // Render questions
+// Render question 1
     renderquestions();
-    console.log("question 1")
 
     //Event Litsener Save Score
     submitbutton.addEventListener("click", savescore);
@@ -88,57 +89,54 @@ function init (event){
     clearscores.addEventListener("click", clearscorelist);
 
     //Event Litsener Go back to main page
-    goback.addEventListener("click", function backtomainpage()
-        {
+    goback.addEventListener("click", function backtomainpage(){
             page0.style.display="block";
             page1.style.display="none";
             page2.style.display="none";
             page3.style.display="none";
             timer.style.display="none";
-
         }
     );
-
 }
 
+    // render Question Function
 function renderquestions(){
 
-    console.log("Line 77: Render question #"+(questionindex+1))    //Console Log
-
-    // render Question
     renderquestion.textContent = QsandAs[questionindex].question;
 
     // render buttons
     var answer =document.createElement("div");
     answer.id="answers-container";
-    for (var i=0; i<4; i++){
-    var btn = document.createElement("button");
-    btn.textContent = QsandAs[questionindex].options[i];
-    btn.id=("op "+(i+1));
-    btn.className = "option-btn";
-    answer.appendChild(btn);    //change
-    qanda.appendChild(answer); 
+    
+    for (var i=0; i<4; i++)
+    {
+        var btn = document.createElement("button");
+        btn.textContent = QsandAs[questionindex].options[i];
+        btn.id=("op "+(i+1));
+        btn.className = "option-btn";
+        answer.appendChild(btn);
+        qanda.appendChild(answer); 
     }
 
+    // Check if answer is correct/incorrect
     answer.addEventListener("click", checkanswer);
-
 }
 
-// Event Handler Answers
+// Answer Click Event Handler Fuction
 function checkanswer(event){
     event.preventDefault();
     var answer = document.querySelector("#answers-container");   
     var element = event.target;
+    // Check if the target is clicked
     if (element.className != "option-btn")
     {
         console.log("Out of range");
         return;
     }
-
+    // Compare answer
     if(element.id === QsandAs[questionindex].answer){
     showresult("Correct!");
     }
-
     else{
         timeleft=timeleft-10;
         if (timeleft<0){
@@ -148,22 +146,22 @@ function checkanswer(event){
 }
 
 console.log(questionindex);    //Console Log 
+
+    // Clear answered question
 renderquestion.textContent = "";
 answer.remove();
 questionindex++;
 
+    // Check question index
     if (questionindex<=3){
         renderquestions();
-        console.log("if");    //Console Log 
-
     }
     else{
         showscores();
-        console.log("else");    //Console Log 
-
     }
 }
 
+// Function to display the final score after all questions are answered or the time is up.
 function showscores(){
     page1.style.display="none";
     page2.style.display="block";
@@ -171,20 +169,13 @@ function showscores(){
     displayscore.textContent = "Your final score is: " + timeleft;
     }
 
-    
-
-
-
-
-
-
-
+// Function to show the result after each question is answered.
 function showresult(resulttext){
     if (resulttext==="Incorrect, -10 points!"){
         result.style.color="red";
     }
     else{
-    result.style.color="black";
+        result.style.color="black";
     }
     result.textContent = resulttext;
     setTimeout(function () {
@@ -192,12 +183,14 @@ function showresult(resulttext){
     }, 1000);
 }
 
+// Function to save the score to the local storage.
 function savescore(event){
-
     event.preventDefault();
+    // Will not save if empty
     if (playername.value === "") {
         return;
     }
+    // Add name and score to the score list
     tosave.push({name: playername.value, score: timeleft});
     localStorage.setItem("saved-scores", JSON.stringify(tosave));
     page2.style.display="none";
@@ -207,27 +200,29 @@ function savescore(event){
 
 }
 
+// Function to render the score list.
 function renderscorelist(){
     removechild();
-    console.log(tosave.length);
     for (var i=0; i<tosave.length; i++){
-            var li = document.createElement("li");
-            li.setAttribute("data-index", i);
-            li.class="list-item";
-            li.textContent = (i+1) +". " + tosave[i].name + " - "+ tosave[i].score;
-            console.log(li);
-            scorelist.appendChild(li);
+        var li = document.createElement("li");
+        li.setAttribute("data-index", i);
+        li.class="list-item";
+        li.textContent = (i+1) +". " + tosave[i].name + " - "+ tosave[i].score;
+        scorelist.appendChild(li);
     }
 }
 
-function clearscorelist(){
+// Function to clear the score list.
+function clearscorelist(event){
+    event.preventDefault();
     localStorage.removeItem("saved-scores");
     removechild();
+    tosave=[];
 }
 
-
-function showscorelist()
-{
+// Function to display the score list.
+function showscorelist(event){
+    event.preventDefault();
     timer.style.display="none";
     page0.style.display="none";
     page1.style.display="none";
@@ -236,8 +231,7 @@ function showscorelist()
     renderscorelist()
 }
 
+// function to remove child elements when the score list is cleared or the list is rendered.
 function removechild(){
-
     scorelist.textContent="";
-    
 }
